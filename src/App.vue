@@ -1,28 +1,98 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" ref="app">
+    <HomePage v-bind:msg="this.message" />
+    <Bio v-bind:name="this.name" v-bind:position="this.pos" v-bind:scroll="this.scroll" v-bind:major="this.major"/>
+    <Education v-bind:qualifications="this.qualifications"/>
+    <Experience v-bind:experiences="this.experiences"/>
+    <Skill v-bind:skills="this.skills" v-bind:langs="this.langs"/>
+    <Award v-bind:qualifications="this.qualifications"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { HomePage, Bio, Education, Experience, Skill, Award } from './components';
+import data from './resource/string';
 
 export default {
   name: 'App',
+  data() {
+    return{
+      scroll: 0,
+      message: data.titleMessage,
+      name: data.bioName,
+      pos: data.latestPosition,
+      major: data.major,
+      qualifications: data.educations,
+      experiences: data.experiences,
+      skills: data.skills,
+      langs: data.langs
+    }
+  },
   components: {
-    HelloWorld
+    HomePage,
+    Bio,
+    Education,
+    Experience,
+    Skill,
+    Award
+  },
+  methods:{
+    scrollLeft: function() {
+      this.scroll > 0 ? this.scroll -= 65 : this.scroll = 0;
+      window.scrollTo(this.scroll, 0);
+    },
+    scrollRight: function() {
+      let maxWidth = document.getElementById('app').offsetWidth - window.innerWidth;
+      this.scroll < maxWidth ? this.scroll += 65 : this.scroll = maxWidth;
+      window.scrollTo(this.scroll, 0);
+    }
+  },
+  created(){
+    window.addEventListener("unload", () => {
+      window.scrollTo(0,0);
+    });
+  },
+  mounted() {
+    window.scrollTo(0,0);
+    this.$refs.app.style.width = (this.$refs.app.children.length * 1920) + "px";
+    window.addEventListener('wheel', (e) => {
+      e.deltaY < 0 && this.scrollLeft();
+      e.deltaY > 0 && this.scrollRight();
+    });
+    window.addEventListener('keydown', (e) => {
+      e.keyCode === 37 && this.scrollLeft();
+      e.keyCode === 39 && this.scrollRight();
+    });
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  height: 100%;
+  scroll-behavior: smooth;
+  z-index: 0;
+}
+body{
+  margin: 0;
+  height: 100%;
+}
+html{
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.shadow{
+	box-shadow: rgba(59, 138, 196, 0.3) 0 0 10px;
 }
 </style>
