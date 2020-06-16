@@ -71,13 +71,13 @@ import Background from './common/Background.vue';
     .title{
         font-size: 45px;
         align-self: flex-start;
-
+        margin-left:30px;
     }
     .content{
         align-self: flex-start;
         text-align: left;
         margin: 30px 0px;
-        margin-left: 30px;
+        margin-left: 110px;
         margin-bottom: 0;
     }
     .lang{

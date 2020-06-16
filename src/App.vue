@@ -5,12 +5,14 @@
     <Education v-bind:qualifications="this.qualifications"/>
     <Experience v-bind:experiences="this.experiences"/>
     <Skill v-bind:skills="this.skills" v-bind:langs="this.langs"/>
-    <Award v-bind:qualifications="this.qualifications"/>
+    <Title>Project Showcase</Title>
+    <ProjectItem v-for="project in projects" v-bind:key="project.index" v-bind:project=project />
   </div>
 </template>
 
 <script>
-import { HomePage, Bio, Education, Experience, Skill, Award } from './components';
+import { HomePage, Bio, Education, Experience, Skill, ProjectItem } from './components';
+import Title from './components/common/Title.vue';
 import data from './resource/string';
 
 export default {
@@ -25,7 +27,8 @@ export default {
       qualifications: data.educations,
       experiences: data.experiences,
       skills: data.skills,
-      langs: data.langs
+      langs: data.langs,
+      projects: data.projects
     }
   },
   components: {
@@ -34,7 +37,8 @@ export default {
     Education,
     Experience,
     Skill,
-    Award
+    Title,
+    ProjectItem
   },
   methods:{
     scrollLeft: function() {
@@ -82,6 +86,7 @@ export default {
   height: 100%;
   scroll-behavior: smooth;
   z-index: 0;
+  pointer-events: none;
 }
 body{
   margin: 0;

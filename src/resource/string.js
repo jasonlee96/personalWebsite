@@ -20,7 +20,7 @@ export default {
     experiences: [
         {
             position: "Currently does not have any work experience",
-            company: "So I am looking for Internship :)",
+            company: "",
             date: ""
         }
     ],
@@ -31,7 +31,7 @@ export default {
         },
         {
             title: "Data Science (Data Mining, Data Analytics)",
-            examples: "Python, PySpark"
+            examples: "Python libraries (sklearn, pandas, numpy, etc.), PySpark"
         },
         {
             title: "Mobile Application Development",
@@ -41,5 +41,14 @@ export default {
     langs:{
         program: "JavaScript, Python, Java, C++, C#",
         spoken: "Mandarin, English, Malay"
-    }
+    },
+    projects:[
+        {
+            index: 0,
+            title: "Final Year Project (Skillset Analysis using Data Mining Techniques)",
+            image: "project1.png",
+            url: "https://jasonlee96.github.io/Skillset-analysis/",
+            description: "It is an analysis system to reveal top trending skill set for any job position and vacancy demand at any location via using data mining method!"
+        }
+    ]
 } 

@@ -1,6 +1,6 @@
 <template>
   <Background>
-    <div class="text-box" ref="home">
+    <div class="text-box animation" ref="home">
       <h1><span v-for="(word, index) in msg.split(' ')" v-bind:key=index ref="words">{{ word }} </span></h1>
     </div>
 
@@ -28,11 +28,10 @@
       for (let i = 0; i < this.$refs.words.length; i++){
           this.$refs.words[i].style.animationDelay = 0.5 * i +"s";
       }
-      console.log(this.$refs.home.offsetWidth);
+
       this.$refs.home.style.marginLeft = -(this.$refs.home.offsetWidth/2)+"px";
       this.$refs.home.style.marginTop = -(this.$refs.home.offsetHeight/2)+"px";
-      console.log(this.$refs.home.offsetWidth);
-      console.log(this.$refs)
+
     }
   }
 </script>
@@ -94,6 +93,24 @@
   }
   .arrow-right{
     right: -473px;
+  }
+
+  .animation{
+    animation: waveform 4s infinite linear;
+  }
+  @keyframes waveform{
+    0%{
+      transform: translate(0px, 0px) 
+    }
+    33%{
+      transform: translate(-10px, 10px) rotateZ(2deg)
+    }
+    66%{
+      transform: translate(10px, -10px) rotateZ(-2deg)
+    }
+    100%{
+      transform: translate(0px, 0px)
+    }
   }
 
   @keyframes fade-in {
