@@ -1,6 +1,6 @@
 <template>
   <div id="app" ref="app">
-    <HomePage v-bind:msg="this.message" />
+    <HomePage v-bind:msg="this.message" v-bind:links="this.links" />
     <Bio v-bind:name="this.name" v-bind:position="this.pos" v-bind:scroll="this.scroll" v-bind:major="this.major"/>
     <Education v-bind:qualifications="this.qualifications"/>
     <Experience v-bind:experiences="this.experiences"/>
@@ -20,6 +20,7 @@ export default {
   data() {
     return{
       scroll: 0,
+      links: data.links,
       message: data.titleMessage,
       name: data.bioName,
       pos: data.latestPosition,
@@ -90,10 +91,14 @@ export default {
 }
 body{
   margin: 0;
+  z-index:0;
   height: 100%;
+  pointer-events: none;
 }
 html{
   margin: 0;
+  z-index:0;
+  pointer-events: none;
   height: 100vh;
   overflow: hidden;
 }

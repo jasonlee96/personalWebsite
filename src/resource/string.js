@@ -1,5 +1,11 @@
 export default {
     titleMessage: "Hello World",
+    links:
+        {
+            github: "https://github.com/jasonlee96",
+            linkedin:"https://www.linkedin.com/in/jasonleezhiyong/",
+            projectRepo:"https://github.com/jasonlee96/personalWebsite"
+        },
     bioName: "Jason Lee",
     latestPosition: "Student of Xiamen University Malaysia",
     major: "Bachelor of Software Engineering",

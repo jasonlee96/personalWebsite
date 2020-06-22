@@ -3,11 +3,25 @@
     <div class="text-box animation" ref="home">
       <h1><span v-for="(word, index) in msg.split(' ')" v-bind:key=index ref="words">{{ word }} </span></h1>
     </div>
-
+    <div class="info-box">
+      <div class="header">View my profile from:</div>
+      <div class="content">
+        <a :href="links.github" title="GitHub Profile">
+          <font-awesome-icon :icon="['fab', 'github-square']" />
+        </a>
+        <a :href="links.linkedin" title="LinkedIn Profile">
+          <font-awesome-icon :icon="['fab', 'linkedin']" />
+        </a>
+        <a :href="links.projectRepo" title="Source Code">
+          <font-awesome-icon :icon="['fas', 'code-branch']" />
+        </a>
+      </div>
+      
+    </div>
     <div class="scroll-box">
-        <div class="arrow-left">&lt;</div>
-        <div class="scroll-text">Scroll to right using mouse wheel or arrow key</div>
-        <div class="arrow-right">&gt;</div>
+      <div class="arrow-left">&lt;</div>
+      <div class="scroll-text">Scroll to right using mouse wheel or arrow key</div>
+      <div class="arrow-right">&gt;</div>
     </div>
   </Background>
   
@@ -15,6 +29,14 @@
 
 <script>
   import Background from './common/Background.vue';
+  import Vue from 'vue';
+  import { library } from '@fortawesome/fontawesome-svg-core';
+  import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+  import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+  library.add(faGithubSquare, faLinkedin, faCodeBranch)
+  Vue.component('font-awesome-icon', FontAwesomeIcon)
 
   export default {
     name: 'HomePage',
@@ -22,7 +44,8 @@
       Background
     },
     props: {
-      msg: String
+      msg: String,
+      links: Object
     },
     mounted(){
       for (let i = 0; i < this.$refs.words.length; i++){
@@ -98,6 +121,44 @@
   .animation{
     animation: waveform 4s infinite linear;
   }
+
+  .info-box{
+    position: absolute;
+    bottom: 20px;
+    left: 1700px;
+    margin-left: -250px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: space-evenly;
+  }
+
+  .info-box .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 40px;
+    width: 400px;
+    align-self: center;
+    color:white;
+    pointer-events: fill;
+  }
+
+  .content a{
+    color: white;
+    text-decoration: none;
+    z-index: 10;
+    pointer-events: fill;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+
+  .info-box .header{
+    margin: 20px 10px;
+    font-size: 30px;
+  }
+
   @keyframes waveform{
     0%{
       transform: translate(0px, 0px) 
