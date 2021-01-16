@@ -47,31 +47,80 @@
       msg: String,
       links: Object
     },
+    methods: {
+      isMobile() {
+        return ( window.innerWidth <= 800 );
+      },
+      checkWidth(){
+        let scrollText = document.getElementsByClassName("scroll-text")[0];
+
+        let arrowLeft = document.getElementsByClassName("arrow-left")[0];
+        let arrowRight = document.getElementsByClassName("arrow-right")[0];
+        if(this.isMobile()){
+          scrollText.innerText = "Scroll to Right";
+          arrowLeft.style.left = "150px";
+          arrowRight.style.right = "-175px";
+        }else{
+          scrollText.innerText = "Scroll to right using mouse wheel or arrow key";
+          arrowLeft.style.left = "5px";
+          arrowRight.style.right = "-473px";
+        }
+        let infoBox = document.getElementsByClassName("info-box")[0];
+        if(document.documentElement.clientWidth > 1300){
+          infoBox.style.left = (document.documentElement.clientWidth - 220) + "px";
+        }
+      }
+    },
     mounted(){
       for (let i = 0; i < this.$refs.words.length; i++){
           this.$refs.words[i].style.animationDelay = 0.5 * i +"s";
       }
 
-      this.$refs.home.style.marginLeft = -(this.$refs.home.offsetWidth/2)+"px";
-      this.$refs.home.style.marginTop = -(this.$refs.home.offsetHeight/2)+"px";
+      
+      this.checkWidth();
 
+      this.$nextTick(function() {
+      window.addEventListener('resize', this.checkWidth);
+      
+    })
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media only screen and (max-width: 425px){
+    .info-box .header{
+      font-size: 25px !important;
+    }
+    .info-box .content{
+      font-size: 35px !important;
+    }
+
+  }
+  @media only screen and (max-width: 600px){
+    .text-box{
+      margin-left: -35vw !important;
+    }
+  }
+  @media only screen and (max-width: 1300px){
+    .info-box{
+      left: 50% !important;
+      bottom: 70px !important;
+    }
+  }
   .text-box{
-    width:838px;
     position: absolute;
     top: 25px;
-    left: 50%;
+    left: 50vw;
     color: white;
-    top: 50%;
+    top: 50vh;
+    margin-left: -21vw;
+    margin-top: -10vh;
   }
 
   .text-box h1{
-    font-size: 150px;
+    font-size: 7vmax;
     margin: 0;
   }
 

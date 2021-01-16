@@ -26,26 +26,25 @@ export default {
     props: {
       name: String,
       position: String,
-      scroll: Number,
       major: String
     },
     mounted(){
-        const ANIMATION_OFFSET = 0.15;
-        window.addEventListener("scroll", () => {
-            if(this.scroll > 1300){
-                this.$refs.word.classList.add("fade-in");
-                this.$refs.word1.classList.add("fade-in");
-                for (let i = 0; i < this.$refs.words.length; i++){
-                    this.$refs.words[i].classList.add("fade-in");
-                    this.$refs.words[i].style.animationDelay = ANIMATION_OFFSET * i +"s";
-                }
-                this.$refs.word1.style.animationDelay = ANIMATION_OFFSET * this.$refs.words.length  + "s";
+        this.$refs.box.style.marginLeft = -(this.$refs.box.offsetWidth/2)-100+"px";
+        this.$refs.box.style.marginTop = -(this.$refs.box.offsetHeight/2)+50+"px";
+        this.$refs.box1.style.marginLeft = -(this.$refs.box1.offsetWidth/2)-30+"px";
+        this.$refs.box2.style.marginLeft = -(this.$refs.box2.offsetWidth/2)-50+"px";
+    },
+    methods:{
+        showAnimation: function(){
+            const ANIMATION_OFFSET = 0.15;
+            this.$refs.word.classList.add("fade-in");
+            this.$refs.word1.classList.add("fade-in");
+            for (let i = 0; i < this.$refs.words.length; i++){
+                this.$refs.words[i].classList.add("fade-in");
+                this.$refs.words[i].style.animationDelay = ANIMATION_OFFSET * i +"s";
             }
-        });
-        this.$refs.box.style.marginLeft = -(this.$refs.box.offsetWidth/2)+"px";
-        this.$refs.box.style.marginTop = -(this.$refs.box.offsetHeight/2)+"px";
-        this.$refs.box1.style.marginLeft = -(this.$refs.box1.offsetWidth/2)+"px";
-        this.$refs.box2.style.marginLeft = -(this.$refs.box2.offsetWidth/2)+"px";
+            this.$refs.word1.style.animationDelay = ANIMATION_OFFSET * this.$refs.words.length  + "s";
+        }
     }
 }
 </script>
@@ -53,8 +52,8 @@ export default {
 <style scoped>
     .bio-box{
         position: absolute;
-        top: 35px;
-        left: 13%;
+        top: 50px;
+        margin-left:100px;
     }
 
     .bio-box h1{
