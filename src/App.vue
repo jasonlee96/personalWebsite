@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <NavBar />
+
+    <v-main>
+      <HelloWorld/>
+      <AboutMe/>
+      <Portfolio/>
+      <Contact/>
+    </v-main>
+    <Footer />
+  </v-app>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { HelloWorld, NavBar, Footer, AboutMe, Portfolio, Contact } from './components';
+
+import Vue from 'vue'
+import VueObserveVisibility from 'vue-observe-visibility'
+
+Vue.use(VueObserveVisibility)
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    NavBar,
+    HelloWorld,
+    Footer,
+    AboutMe,
+    Portfolio,
+    Contact
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  #app{
+    color: white;
+    background: #322D31;
+    padding-bottom: 100px;
+  }
+
 </style>
