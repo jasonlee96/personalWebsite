@@ -1,8 +1,10 @@
-import HomePage from './HomePage.vue';
-import Bio from './Bio.vue';
-import Education from './Education.vue';
-import Experience from './Experience.vue';
-import Skill from './Skill.vue';
-import ProjectItem from './ProjectItem.vue';
 
-export { HomePage, Bio, Education, Experience, Skill, ProjectItem };
+import HelloWorld from './HelloWorld.vue';
+import Background from './Background.vue';
+import NavBar from './NavBar.vue';
+import Footer from './Footer.vue';
+import AboutMe from './AboutMe.vue';
+import Portfolio from './Portfolio.vue';
+import Contact from './Contact.vue';
+
+export { HelloWorld, Background, NavBar, Footer, AboutMe, Portfolio, Contact };
