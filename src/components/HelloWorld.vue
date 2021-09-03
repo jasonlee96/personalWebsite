@@ -19,6 +19,7 @@
 
 <script>
   import LandingImg from '../assets/img/landing.jpg';
+
   export default {
     name: 'HelloWorld',
 
@@ -52,3 +53,4 @@
     opacity: 1;
   }
 </style>
+
