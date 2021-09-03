@@ -141,12 +141,12 @@ export default {
 
 .fade-port{
     transition: 1s ease-in;
-    transform: translateX(50%);
+    transform: translateX(15px);
     opacity: 0.01;
 }
 .fade-port-rev{
     transition: 1s ease-in;
-    transform: translateX(-50%);
+    transform: translateX(-15px);
     opacity: 0.01;
 }
 .fade-anim{
