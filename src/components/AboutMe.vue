@@ -3,10 +3,13 @@
         <div class="common__content flex-col">
             <span class="about__greeting text-primary font-size-24 font-bold">Greetings!</span>
             <span class="font-size-title font-bold common__margin__subcontent margin-top">I am a Software Engineer.</span>
-            <span class="font-size-18 common__margin__subcontent margin-top">A software engineer and web developer who passionate on building website and application! 
+            <span class="font-size-18 common__margin__subcontent margin-top">A software engineer and Full stack developer who passionate on building website and application! 
                 <ul style="margin-left:30px;" class="font-size-16">
-                    <li class="margin-top">One year software development experience in several industries such as Airline, Food & Beverage, E-Commerce, and etc.</li>
-                    <li class="margin-top">As a lead developer who lead a small team to ensure the project can be done without much issue and smooth.</li>
+                    <li class="margin-top">Two years software development experience in several industries such as Airline, Food & Beverage, E-Commerce, and etc.</li>
+                    <li class="margin-top">As a lead developer who led a small team to ensure the project can be done smoother without issues.</li>
+                    <li class="margin-top">Specialized in Backend development which mainly focus on .NET Core & .NET Framework</li>
+                    <li class="margin-top">Frontend development using ASP.NET MVC, Razor Pages, ReactJS & VueJS.</li>
+                    <li class="margin-top">Having experience on Azure DevOps to set up CI/CD pipeline for several projects to achieve auto deployment to respective server.</li>
                 </ul>
             </span>
         </div>

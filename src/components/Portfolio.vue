@@ -54,12 +54,41 @@
                 </ul>
             </span>
         </div>
+
+        <div class="common__content flex-col orderl-6">
+            <span class="about__greeting text-primary font-size-24 font-bold">Portfolio 3</span>
+            <span class="font-size-title font-bold common__margin__subcontent margin-top">Supezy Website</span>
+            <span class="font-size-18 common__margin__subcontent margin-top">Outsource Project 
+                <ul style="margin-left:30px;" class="font-size-16">
+                    <li class="margin-top">Helped my friend to set up an product introduction website to introduce their product.</li>
+                    <li class="margin-top">My Roles:</li>
+                    <ul>
+                        <li class="margin-top">Implement a MVP version of CMS which able to adjust the content of the website.</li>
+                        <li class="margin-top">Design & Develop the UI using ReactJS and pull the content using PHP.</li>
+                    </ul>
+                    <li class="margin-top">Tech involves: PHP & ReactJS</li>
+                </ul>
+            </span>
+        </div>
+
+        <div class="common__content flex-col fade-port orderl-5" v-observe-visibility="{
+            callback: FadeAnim,
+            intersection: {
+                threshold: 0.8,
+            },
+            once: true,
+        }">
+            <a href="https://www.supezy.com/">
+                <v-img :src="ImgSupezy" class="img1 shadow rounded-box"></v-img>
+            </a>
+        </div>
     </section>
 </template>
 
 <script>
 import ImgOne from '../assets/img/img3.png';
 import ImgTwo from '../assets/img/img4.png';
+import ImgSupezy from '../assets/img/supezy.png';
 export default {
   name: 'Portfolio',
   components: {
@@ -67,7 +96,8 @@ export default {
   },
   data: ()=>({
       ImgOne,
-      ImgTwo
+      ImgTwo,
+      ImgSupezy
   }),
   methods: {
     FadeAnim: function (isVisible, entry) {
