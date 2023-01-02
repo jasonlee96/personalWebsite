@@ -5,6 +5,7 @@
     <v-main>
       <HelloWorld/>
       <AboutMe/>
+      <Project/>
       <Portfolio/>
       <Contact/>
     </v-main>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { HelloWorld, NavBar, Footer, AboutMe, Portfolio, Contact } from './components';
+import { HelloWorld, NavBar, Footer, AboutMe, Portfolio, Contact, Project } from './components';
 
 import Vue from 'vue'
 import VueObserveVisibility from 'vue-observe-visibility'
@@ -30,7 +31,8 @@ export default {
     Footer,
     AboutMe,
     Portfolio,
-    Contact
+    Contact,
+    Project
   }
 };
 </script>

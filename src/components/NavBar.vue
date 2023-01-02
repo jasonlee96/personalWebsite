@@ -52,6 +52,10 @@ export default {
             value: "#about"
         },
         {
+            label: "Projects",
+            value: "#project"
+        },
+        {
             label: "Portfolio",
             value: "#portfolio"
         },
