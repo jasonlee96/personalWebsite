@@ -43,5 +43,4 @@ export default {
     background: #322D31;
     padding-bottom: 100px;
   }
-
 </style>
