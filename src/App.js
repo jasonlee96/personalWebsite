@@ -5,6 +5,8 @@ import Summary from './components/Summary';
 import Experience from './components/Experience';
 import ParallaxDot from './components/common/ParallaxDot';
 import Skill from './components/Skill';
+import Portfolio from './components/Portfolio';
+import Footer from './components/common/Footer';
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
         <Summary />
         <Experience />
         <Skill />
+        <Portfolio />
       </div>
+      <Footer />
     </div>
   );
 };
