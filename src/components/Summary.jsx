@@ -46,6 +46,7 @@ const Summary = () => {
     <>
         <h2 className="text-4xl font-extrabold mb-6 text-[#5a3e1b] drop-shadow-lg text-center">A Senior Software Engineer with ...</h2>
         <BentoGrid items={summary} />
+        <div className = "hidden col-span-1 row-span-1 md:h-48 md:h-0 md:col-span-2 md:row-span-2"></div>
     </>
     
   );
