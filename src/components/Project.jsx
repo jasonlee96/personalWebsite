@@ -18,7 +18,7 @@ const Project = () => {
 
 const ProjectGrid = ({ items }) => {
     return (
-        <div className="grid grid-cols-2 gap-6 p-6 relative auto-rows-[minmax(120px,_1fr)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 relative auto-rows-[minmax(120px,_1fr)]">
             {items.map((item, index) => (
                 <motion.div
                     key={index}
