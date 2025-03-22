@@ -5,13 +5,13 @@ import SkillsetAnalysis from '../assets/project1.png';
 import { motion } from "framer-motion";
 
 const items = [
-  { title: "Supezy", content: "A product introduction website built under React", link: "https://jasonlee96.github.io/Supezy/", img: Supezy },
-  { title: "Skillset Analysis", content: "A job vacancy analysis website with python + react + mongo stacks <b>(Backend deprecated)</b>", link: "https://jasonlee96.github.io/Skillset-analysis/", img: SkillsetAnalysis },
+  { title: "Supezy", content: "A product introduction website built under React", description: "Tech stack: ReactJS + ExpressJS (for CMS api)", link: "https://jasonlee96.github.io/Supezy/", img: Supezy },
+  { title: "Skillset Analysis", content: "A job vacancy analysis website with python + react + mongo stacks <b>(Backend deprecated)</b>", description: "Tech stack: MERN stacks + Python scikit-learn (for data mining components) ", link: "https://jasonlee96.github.io/Skillset-analysis/", img: SkillsetAnalysis },
 ];
 const Portfolio = () => {
     return (
       <>
-          <h2 className="text-4xl font-extrabold mt-16 mb-6 text-[#5a3e1b] drop-shadow-lg text-center">Here is some portfolio...</h2>
+          <h2 className="text-4xl font-extrabold mt-16 mb-6 text-[#5a3e1b] drop-shadow-lg text-center">Some personal portfolio</h2>
           <PortfolioGrid items={items} />
       </>
       
@@ -29,6 +29,7 @@ const Portfolio = () => {
           >
             <h1 className="text-4xl font-bold text-[#5a3e1b] text-center mb-4">{item.title}</h1>
             <p className="text-lg text-gray-800 text-center mb-6" dangerouslySetInnerHTML={{ __html: item.content }}></p>
+            <p className="text-lg text-gray-800 text-center mb-6" >{item.description}</p>
             {item.link && <a href={item.link}><img src={item.img} alt={item.title} /></a>}
           </motion.div>
         ))}

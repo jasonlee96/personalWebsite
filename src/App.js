@@ -7,6 +7,7 @@ import ParallaxDot from './components/common/ParallaxDot';
 import Skill from './components/Skill';
 import Portfolio from './components/Portfolio';
 import Footer from './components/common/Footer';
+import Project from './components/Project';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Summary />
         <Experience />
         <Skill />
+        <Project />
         <Portfolio />
       </div>
       <Footer />
