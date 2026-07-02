@@ -11,7 +11,7 @@ export default function Education() {
       <div className="grid gap-6 sm:grid-cols-2">
         {education.map((entry, i) => (
           <Reveal key={entry.school} delay={i * 80}>
-            <div className="h-full rounded-lg border border-border bg-surface p-6">
+            <div className="h-full rounded-lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/5">
               <h3 className="text-lg font-semibold text-foreground">
                 {entry.degree}
               </h3>

@@ -25,7 +25,7 @@ export default function Projects() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-accent"
+              className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-accent/5"
             >
               <div className="relative h-44 w-full overflow-hidden bg-surface-2">
                 <Image

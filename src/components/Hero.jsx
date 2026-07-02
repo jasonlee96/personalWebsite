@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import Typewriter from "./Typewriter";
 
 export default function Hero() {
   return (
@@ -11,7 +12,7 @@ export default function Hero() {
         {profile.name}.
       </h1>
       <h2 className="mt-2 text-3xl font-bold text-muted sm:text-5xl">
-        I build things for the web.
+        <Typewriter text="I build things for the web." />
       </h2>
       <p className="mt-6 max-w-xl text-lg text-muted">{profile.tagline}</p>
 
